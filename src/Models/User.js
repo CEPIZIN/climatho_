@@ -15,6 +15,10 @@ let UserModel = mongoose.model("users", UserSchema)
 
 class User {
 
+    constructor() {
+        this.currentUser = null
+    }
+
     async Create(cpf, password, birth_date) {
         try {
 
@@ -50,6 +54,11 @@ class User {
             if(!existingUser) return false
 
             let passIsCorrect = await bcrypt.compare(password, existingUser.password)
+
+            if(!passIsCorrect) return false
+
+            this.currentUser = existingUser
+            return true
 
         } catch(err) {
 
