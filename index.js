@@ -12,8 +12,10 @@ app.use(express.json())
 
 app.use('/', router)
 
-app.on("database", () => {
-    app.listen(process.env.PORT, () => console.log("Server started..."))
+const port = process.env.PORT ||  3000
+
+app.listen(port,() => {
+    console.log(` Server is listening at http://localhost:${port}`)
 })
 
-export default app
+export default app;

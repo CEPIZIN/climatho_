@@ -8,10 +8,13 @@ let UserSchema = new mongoose.Schema({
     cpf: String,
     password: String,
     birth_date: String,
-    name: String
+    name: String,
+    economy: Number
 })
 
 let UserModel = mongoose.model("users", UserSchema)
+
+//Service 
 
 class User {
 
@@ -36,7 +39,8 @@ class User {
                 cpf,
                 password: hash,
                 birth_date,
-                name: userInfo.nome_da_pf
+                name: userInfo.nome_da_pf,
+                economy: 0
             })
 
             return true
@@ -80,7 +84,6 @@ class User {
             console.error(err)
         }
     }
-
 }
 
 export default new User()
