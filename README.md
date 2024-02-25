@@ -69,3 +69,4 @@ Este  aplicativo tem como objetivo fornecer uma solução integrada a solução 
 - Realizar testes piloto para validar o sistema de abastecimento e logística.
 - Expandir a rede de estabelecimentos e usuários.
 - Continuar refinando e otimizando o sistema com base no feedback dos usuários e stakeholders.
+- Expandir para grãos e insumos alimentícios
