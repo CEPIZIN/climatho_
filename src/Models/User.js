@@ -71,7 +71,7 @@ class User {
 
     async GetByCpf(cpf, birth_date) {
         try {
-            
+
             const userCpf = await axios.get(`https://ws.hubdodesenvolvedor.com.br/v2/cpf/?cpf=${cpf}&data=${birth_date}&token=${process.env.TOKENCPF}`)
             
             if(userCpf.data.return == "NOK") {

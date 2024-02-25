@@ -23,6 +23,7 @@ class UserController {
         try {
             let logged = await User.Login(cpf, password)
             if(logged) {
+                await UserModel.updateOne({ cpf }, { $inc: { economy: 1 } })
                 res.json({msg: `User ${User.currentUser.name} logged`})
             } else {
                 res.json({msg: "ERROR"})

@@ -1,11 +1,11 @@
 //importa o model aqui 
 import pointRefil from "../Models/MapsPointer.js"
+import DistanceMatrix from "google-distance-matrix";
 
 class MapController{
 
     static async GetPoints(req,res){
         try{
-            //pq ta voltando vazio 
             const points = await pointRefil.find();
             console.log(points)
             res.status(200).json({ points})
